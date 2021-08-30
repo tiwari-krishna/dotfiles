@@ -1,6 +1,6 @@
 /* constants */
 #define TERMINAL "st"
-#define BROWSER "firefox"
+#define BROWSER "brave"
 #define FILES "pcmanfm"
 #define MUSIC "deadbeef"
 #define MAIL "thunderbird"
@@ -69,6 +69,8 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "HHH",      grid },
 	{ "[M]",      monocle },
+    { "|C|",      centeredmaster },
+    { ">C>",      centeredfloatingmaster },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ NULL,       NULL },
 };
@@ -119,7 +121,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_n,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+    { MODKEY,                       XK_u,      setlayout,      {.v = &layouts[3]} },
+    { MODKEY,                       XK_o,      setlayout,      {.v = &layouts[4]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[2]} },
+    { MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY|ControlMask,			XK_comma,  cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period, cyclelayout,    {.i = +1 } },
 	{ MODKEY,                       XK_space,  cyclelayout,    {.i = +1 } },
@@ -134,10 +139,10 @@ static Key keys[] = {
 	{ Mod1Mask|ControlMask,         XK_Right,  shiftview,      {.i =  1 } },
 	{ Mod1Mask|ControlMask,         XK_Left,   shiftview,      {.i = -1 } },
 	{ MODKEY,		        		XK_Tab,    shiftview,	   {.i =  1 } },
-    { MODKEY,                       XK_g,       spawn,      SHCMD("spotify") },
     { MODKEY,                       XK_v,       spawn,      SHCMD("pavucontrol") },
     { MODKEY,                       XK_x,       spawn,      SHCMD("bash ~/dmscripts/power") },
     { MODKEY|ShiftMask,             XK_e,       spawn,      SHCMD("st -e htop") },
+    { MODKEY|ShiftMask,             XK_s,       spawn,      SHCMD("scrot -s") },
     { 0, XF86XK_AudioMute,                      spawn,      SHCMD("pactl set-sink-volume @DEFAULT_SINK@ toggle") },
     { 0, XF86XK_AudioRaiseVolume,               spawn,      SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
     { 0, XF86XK_AudioLowerVolume,               spawn,      SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
