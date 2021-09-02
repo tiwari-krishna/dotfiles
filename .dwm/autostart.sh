@@ -1,3 +1,0 @@
-lxpolkit &
-dwmblocks & 
-nitrogen --restore &
