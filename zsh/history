@@ -1,0 +1,651 @@
+
+sudo pacman -Syu
+paru
+paru -S brave-bin
+neofetch
+vim .config/st
+sudo pacman -Syu
+paru
+pacman -Q | wc -l
+cd .config/dwm
+vim config.h
+sudo make clean install
+cd .config/dw
+cd .config/dwm
+vim config.h
+sudo make clean install
+sudo pacman -S alsa-utils
+sudo pacman -S gimp
+sudo pacman -S 0ad
+sudo pacman -S 0ad
+clear
+sudo pacman -S neovim
+sudo pacman -S xclip
+nvim .bashrc
+bash
+nvim /etc/fsta
+nvim /etc/fstab
+vim .vimrc
+vim .bashrc
+sudo pacman -S vim-plugins
+vim .bashrc
+paru screenkey
+paru ttf-font-awesome
+paru screenkey
+screenkey
+sudo pacman -S gimp
+vim .bashrc
+clear
+killall screenkey
+clear
+clear
+sudo pacman -S inkscape
+sudo pacman -S pstoedit latex scour texlive-core
+sudo pacman -S pstoedit scour texlive-core
+clear
+paru latex
+clear
+paru librewolf
+paru -S librewolf-bin
+clear
+paru tor-browser
+sudo vim /etc/hosts
+ping google.com
+sudo vim /etc/hosts
+cd .config/st
+vim config.h
+sudo pacman -Ss vim-plugins
+sudo pacman -R vim-ale vim-align
+vim config.h
+vim st.h
+vim x.c
+sudo pacman -S vim-plugins
+sudo pacman -Ss vim-plugins
+sudo pacman -S vim-supertab
+vim 
+vim x.c
+nvim x.c
+sudo make clean install
+nvim x.c
+sudo make clean install
+ks
+ls
+vim .xinitrc
+sudo pacman -Syu
+sudo pacman -Syu
+sudo vim /etc/pacman.d/mirrorlist
+sudo pacman -Syu
+paru
+paru -S brave-bin
+clear
+sudo pacman -Q
+sudo pacman -Q | wc -l
+sudo pacman -S alacritty
+sudo pacman -S firefox
+sudo pacman -S python-pip python2-pip
+sudo pacman -S rust
+sudo pacman -S discord
+sudo pacman -S matrix
+sudo pacman -S element-desktop
+sudo pacman -S qtox
+sudo pacman -Syu
+curl ifconfig.co
+curl wttr.in/Kawasoti
+curl wttr.in/Kawasoti
+curl wttr.in/Bharatpur
+curl wttr.in/Chicago
+curl wttr.in
+curl http://wttr.in/Kawasoti
+time
+date
+curl ifconfig.co
+date
+date
+date
+date
+date
+date
+date
+upall
+sudo pacman -S kvm virtmanager qemu libvert
+sudo pacman -S virt-manager
+sudo pacman -S virt-manager qemu
+LC_ALL=C lscpu | grep Virtualization
+grep -E --color=auto 'vmx|svm|0xc0f' /proc/cpuinfo
+clear
+sudo pacman -S virt-manager qemu libvirt
+lsmod | grep kvm
+sudo pacman -S virt-manager qemu libvirt
+sudo pacman -S virt-manager qemu libvirt
+sudo pacman -S ebtables
+man openrc
+sudo rc-update add libvirtd boot
+sudo pacman -S libvirt-openrc
+sudo rc-update add libvirtd boot
+clear
+sudo pacman -S ebtables
+sudo pacman -S cowsay
+cowsay
+cowsay hello
+fortune | cowsay
+paru firefox-ser
+paru firefox-esr
+paru firefox
+cd .config/st
+vim config.h
+sudo make clean install
+ls
+clear
+vim config.h
+clear
+sudo make clean install
+ls
+clear
+clear
+sudo pacman -Syu
+neofetch
+clear
+celar
+htop
+ls
+clear
+ls
+ls | wc -l
+dash
+bash
+paru firefox
+paru firefox-esr
+paru icecat
+paru -Rsu icecat-bin
+sudo pacman -S firefox
+sudo pacman -S qutebrowser
+sudo pacman -S xmonad xmobar xmonad-contribs
+sudo pacman -S xmonad xmobar xmonad-contrib
+pacman -Q | wc -l
+clear
+sudo pacman -Rsu virt-manager
+sudo pacman -Rsu virt-manager qemu libvirt libvirt-openrc
+sudo pacman -Rsu virt-manager qemu libvirt libvirt-openrc
+rc-update del libvirtd boot
+sudo rc-update del libvirtd boot
+clear
+sudo pacman -Rsu ebtables
+sudo pacman -R (pacman -Qstq)
+sudo pacman -R (pacman -Qstq)
+pacman -Qdtq
+sudo pacman -R (pacman -Qdtq)
+sudo pacman -Rsu (pacman -Qdtq)
+bash
+neofetch
+cmatrix -C red
+cmatrix -C megenta
+cmatrix -C magenta
+cmatrix -C black
+cmatrix -C black
+cmatrix -h
+cmatrix -l
+cmatrix -o
+cmatrix -h
+cmatrix -n
+cmatrix -r
+cmatrix -s
+cmatrix -m
+nvim
+nvim
+killall cmus
+cmus
+htop
+upall
+paru
+sudo pacman -S python-adblock'
+sudo pacman -S python-adblock
+cd .config/dwm
+cd ..
+cd st
+vim config.h
+sudo make clean install
+ls
+clear
+cd .config/st
+vim config.h
+vim config.h
+sudo make clean install
+sudo pacman -Syu
+clear
+neofetch
+clear
+sudo pacman -S firefox
+sudo pacman -Ss browser 
+sudo pacman -S lynx
+sudo pacman -S min
+df -h
+sudo pacman -S gimp inkscape
+sudo pacman -S darktable
+pacman -Q | wc -l
+clear
+sudo pacman -S firefox-developer-edition
+cd .config/st
+vim config.h
+sudo make clean install
+sudo pacman -S firefox-developer-edition
+paru firefox-ser
+paru firefox-esr
+paru firefox-ser
+paru firefox-esr
+paru -Sc firefox-esr68
+paru -Rsu firefox-esr68
+paru -Rsu firefox68-esr
+paru -Ss firefox68-esr
+paru -Ss firefox
+paru firefox
+paru firefox-ses
+paru firefox-esr
+paru -Rsu firefox-esr68-bin
+clear
+paru -Sc
+df -h
+clear
+sudo pacman -S xarchiver
+sudo pacman -S arj cpio lha lrzip lzip lzop p7zip unarj unrar
+pacman -Q | wc -l
+paru
+sudo pacman -S firefox
+clear
+sudo pacman -S firefox
+clear
+sudo pacman -S firefox
+paru -S firefox-esr-bin
+paru -Rsu firefox-esr
+paru -Rsu firefox-esr-bin
+clear
+sudo pacman -S firefox
+sudo pacman -S virtualbox
+clear
+paru
+sudo pacman -S ncpamixer
+sudo pacman -S pamixer
+pamixer
+sudo pacman -S pulsemixer
+pulsemixer
+clear
+cd .config/dwm
+vim config.h
+cd .config/dw
+cd .config/dwm
+sudo make clean install
+cd .config/st
+vim config.h
+sudo make clean install
+sudo pacman -Syu
+pacman -Q | wc -l
+clear
+sudo pacman -S libreoffice
+sudo pacman -S vivaldi
+sudo pacman -S opera
+clear
+sudo pacman -S vivaldi
+clear
+sudo pacman -S emacs
+clear
+sudo pacman -S neovim
+sudo pacman -S fish
+clear
+sudo pacman -S dmenu
+sudo pacman -S st
+sudo pacman -Ss st
+sudo pacman -Ss st-term
+sudo pacman -S st
+clear
+paru -st
+paru -S st
+sudo pacman -S alacritty
+sudo pacman -S xterm
+xterm
+clear
+exit
+cd .config/dwm/dwmblocks
+vim blocks.h
+sudo make clean install
+cd .config/dwm
+vim config.h
+sudo make clean install
+paru vim-emoji
+vim
+cd .config/dwm/dwmblocks/
+vim blocks.h
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \\
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\
+
+ls
+Plug 'junegunn/vim-emoji'
+cd .vim
+ls
+vim autoload
+vim autoload
+vim
+cd 
+cd .config/st
+vim config.h
+sudo make clean install
+cd 
+cd .config/dwm
+cd dwmblocks
+vim blocks.h
+sudo make clean install
+sudo pacman -S galculator
+cd .config/dw
+cd .config/dwm
+vim config.h
+pactl set-sink-volume @DEFAULT_SINK@ toggle
+pactl set-sink-volume @DEFAULT_SINK@ +5%
+pactl set-sink-volume @DEFAULT_SINK@ -5%
+man pactl
+pactl set-sink-input-mute
+pactl set-sink-input-mute 1
+pactl set-sink-input-mute toggle
+amixer set Master toggle
+amixer set Master toggle
+kill -10 $(pidof dwmblocks)"
+kill -10 $(pidof dwmblocks)
+kill -10 $(pidof dwmblocks)
+kill -10 $(pidof dwmblocks)
+kill -10 $(pidof dwmblocks)
+kill dwmblocks
+; kill -44 $(pidof dwmblocks)"
+kill -44 $(pidof dwmblocks)
+kill -44 $(pidof dwmblocks)
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks
+bash
+cd .config/dwm/dwmblocks
+vim dwmblocks.c
+mv blocks.h config.h
+sudo make clean install
+git clone https://github.com/LukeSmithxyz/dwmblocks.git
+cd dwmblocks
+ls
+cp /home/krishna/.config/dwm/dwmblocks/config.h config.h
+sudo make clean install
+cd ..
+sudo rm -R dwmblocks
+git clone https://github.com/LukeSmithxyz/dwmblocks.git
+cd dwmblocks
+sudo make clean install
+cd dwmblocks
+ls
+cp /home/krishna/dwmblocks/config.h /home/krishna/dwmblocks/config.h
+cp /home/krishna/.config/dwm/dwmblocks/config.h /home/krishna/dwmblocks/config.h
+sudo make clean install
+cd
+cd .config/dwm/dwmblocks
+sudo make clean install
+cd dwmblocks
+cd ..
+sudo rm -R dwmblocks
+git clone https://github.com/LukeSmithxyz/dwmblocks.git
+cd dwmblocks
+ls
+vim config.h h
+vim config.h
+cd dwmblocks
+clear
+cp /home/krishna/.config/dwm/dwmblocks/config.h /home/krishna/dwmblocks/config.h
+vim config.h h
+vim config.h
+sudo make clena install
+sudo make clean install
+cd dwmblocks
+ls
+vim config.h
+sudo make clean install
+cd dwmblocks
+sudo make clean install
+cd .config
+cd
+cd dwmblocks
+vim config.h
+sudo make clean install
+cd .config/dwm/dwmblocks
+sudo make clean install
+cd dwmblocks
+cd patches
+ls
+cd .config/dwm/dwmblocks
+vim dwmblocks-statuscmd-fork.diff
+sudo vim /etc/local
+sudo vim /etc/locale.gen
+vim 
+cd .config/dwm
+cd dwmblocks
+cat config.h 
+clear
+sudo pacman -S kitty
+cd .config/dwm
+ls
+cd dwmblocks
+ls
+cat config.h
+vim config.h h
+paru -S noto-fonts-emoji-apple
+vim 
+cd .config/st
+vim config.h
+sudo make clean insta
+sudo make clean instal
+sudo make clean install
+cd .config/dwm
+cd dwmblocks
+cat blocks.
+cat blocks.\
+
+cat blocks.h
+cat config.h
+paru -Sc
+paru plugged
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \\
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim\
+
+vim .vim
+vim .vimrc
+vim
+vim
+cd .vim
+ls
+cd autoload
+ls
+cd 
+vim .vimrc
+vim 
+vim .vimrc
+cd .vim/
+ls
+cd autoload
+ls
+vim plug.vim
+cd
+vim .vimrc
+cd dwmblocks
+ls
+sudo make clean install
+cd .dw
+cd dwmblocks
+vim config.h h
+sudo make clena install
+sudo make clean install
+cd dwmblocks
+ls
+cd
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+cd dwmblocks
+vim config.h h
+pamixer --allow-boost -5 5; kill -44 $(pidof dwmblocks)
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+pamixer --allow-boosti-d 5; kill -44 $(pidof dwmblocks)
+clear
+pamixer --allow-boosti-d 5; kill -5 $(pidof dwmblocks)
+pamixer --allow-boosti-d 5; kill -44 $(pidof dwmblocks)
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+clear
+pkill -RTMIN+10 dwmblocks
+pkill -RTMIN+5 dwmblocks
+pkill -RTMIN+5 dwmblocks
+pkill -RTMIN+5 dwmblocks
+pkill -RTMIN+5 dwmblocks
+cd dwmblocks
+vim config.h 
+pkill -RTMIN+5 dwmblocks
+kill -44 $(pidof dwmblocks)
+vim config.h 
+sudo make clean install
+kill -44 $(pidof dwmblocks)
+kill -44 $(pidof dwmblocks)
+kill -44 $(pidof dwmblocks)
+kill -44 $(pidof dwmblocks)
+kill -44 $(pidof dwmblocks)
+sudo make clean install
+cd dwmblocks
+vim config.h h
+vim config.h h
+vim config.h
+sudo make clean install
+cd .config/dwm
+cd
+cd
+cd dwmblocks
+vim config.h
+sudo make clean install
+cd dwmblocks
+vim config.h
+sudo make clean install
+killall dwm
+cd dwmblocks
+ls
+vim config.h 
+sudo make clean install
+cd .config/dwm
+vim config.h
+cd dwmblocks
+cd scripts
+ls
+vim 
+vim wifi
+cd
+cd dwmblocks
+ls
+man dwmblocks
+dwmblocks -h
+dwmblocks -refersh
+dwmblocks
+dwmblocks
+cd 
+cd .config/dwm/dwmblocks
+vim config.h
+sudo make clean install
+sudo rm -R dwmblocks
+git clone https://github.com/LukeSmithxyz/dwmblocks.git
+cd
+cd dwmblocks
+vim config.h
+cd .config/dwm/dwmblocks
+cd .config/dwm/dwmblocks
+vim dwmblocks.c
+pacman -Ss vim-plugins
+sudo pacman -R supertab
+sudo pacman -R vim-supertab
+sudo pacman -R vim-vital
+sudo pacman -R vim-vital vim-easymotion
+sudo pacman -R vim-vital vim-ultisnips
+sudo pacman -R vim-ultisnips
+vim dwmblocks.c
+sudo make clean install
+vim dwmblocks.c
+vim dwmblocks.c
+sudo make clean install
+vim dwmblocks.c
+sudo make clean install
+cd .config/dwm
+ls
+vim config.h
+vim dwm.c
+sudo make clean install
+git clone https://github.com/tiwari-krishna/dwm
+cd .config/dwm
+sudo make clean install
+vim config.h
+cd .config/dwm
+sudo make clean install
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)
+cd .config/dwm
+vim config.h
+amixer set Master 5%- unmute
+sudo make clean install
+cd dwmblocks
+ls
+vim config.h 
+sudo make clean install
+cd .config/dwm/dwmblocks
+vim config.h 
+vim config.h 
+sudo make clean install
+cd .config/dwm/dwmblocks/
+vim config.h 
+sudo make clean install
+cd .config/dwm/dwmblocks
+vim config.h 
+sudo make clean install
+cd .config/dwm
+vim config.h
+sudo make clean install
+cd .config/dwm/dwmblocks/
+ls
+vim config.h
+sudo make clean install
+cd .config/dwm/dwmblocks
+vim config.h 
+sudo make clean install
+cd .config/dwm/dwmblocks/scripts
+ls
+vim timedate
+ls
+rm -R dwm
+sudo rm -R dwm
+sudo rm -R dwmblocks
+ls
+vim .zprofile
+vim .zshenv
+clear
+cd .config/zsh
+ls
+vim .zshrc
+clear
+vim .zprofile
+mv .zprofile .config/zsh/profile
+vim .zprofile
+cd .config/
+cd zsh
+ls
+vim profile
+startx
+vim .zprofile
+ls
+rm .zprofile
+ls
+ln -sf .config/zsh/profile .zprofile
+ls
+exit
+exit
+: 1631698870:0;startx
+: 1631698878:0;vim .zprofile
+: 1631698882:0;ls
+: 1631699111:0;mv .zsh_history .config/zsh
+: 1631705247:0;clear
+: 1631705290:0;vim .zprofile
+: 1631705305:0;cd .config/zsh
+: 1631705310:0;vim .zshrc
