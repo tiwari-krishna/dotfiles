@@ -1,6 +1,6 @@
 nitrogen --restore &
 dwmblocks &
 picom &
-lxpolkit &
+unclutter &
 xclip &
 exec dbus-launch dwm
