@@ -1,2 +1,2 @@
 ##My scripts to run dwmblocks modules
-written in simple shell
+written in simple shell script
