@@ -1,6 +1,6 @@
 # Enable colors and change prompt:
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+#autoload -U colors && colors
+#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 eval "$(starship init zsh)"
 
@@ -79,6 +79,8 @@ alias upall='paru'
 alias uprepo='sudo reflector --verbose --latest 10 --sort rate --save /etc/pacman.d/mirrorlist'
 alias you-m4a="youtube-dl --extract-audio --audio-format m4a "
 alias you-mp3="youtube-dl --extract-audio --audio-format mp3 "
+alias lynx="lynx -vikeys"
+alias you-best="youtube-dl -f bestvideo+bestaudio "
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
