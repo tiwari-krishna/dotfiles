@@ -1,8 +1,0 @@
-tint2 &
-nitrogen --restore &
-lxsession &
-xautolock -time 15 -locker "~/lock.sh" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'" &
-volumeicon &
-cbatticon &
-nm-applet &
-picom &
