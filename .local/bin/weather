@@ -1,0 +1,3 @@
+#!/bin/sh
+TEMP="$(curl -s wttr.in/Kawasoti?format="+%c+%t(%f)")"
+echo "$TEMP"
