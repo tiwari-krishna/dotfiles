@@ -1,0 +1,7 @@
+nitrogen --restore &
+picom &
+dunst &
+mpd &
+unclutter &
+dwmblocks &
+exec dwm
