@@ -82,6 +82,9 @@ alias you-best="youtube-dl -f bestvideo+bestaudio "
 alias install="sudo pacman -S "
 alias remove="sudo pacman -Rsu "
 alias nopak="pacman -Q | wc -l"
+alias sudo="doas "
+alias dwmc="vim ~/.config/dwm/config.h"
+alias dwms="vim ~/.config/dwm/dwm.c"
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
@@ -133,3 +136,11 @@ zle -N down-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
 
 zstyle ':completion:*' rehash true
+
+# add to .zshrc
+bindkey '^X^m' accept-line-swallow
+zle -N accept-line-swallow acceptandswallow
+acceptandswallow() {
+            dwmswallow $WINDOWID
+                zle accept-line
+        }
