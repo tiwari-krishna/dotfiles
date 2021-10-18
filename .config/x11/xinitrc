@@ -1,5 +1,6 @@
 nitrogen --restore &
 picom &
+xclip &
 dunst &
 mpd &
 unclutter &
