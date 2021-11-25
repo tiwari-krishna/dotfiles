@@ -1,4 +1,4 @@
-export BROWSER=librewolf
+export BROWSER=firefox
 export EDITOR=vim
 export TERMINAL=st
 export HISTCONTROL=ignoredups:erasedups
