@@ -39,6 +39,8 @@ alias lynx="lynx -vikeys"
 alias dwmc="vim ~/.config/dwm/config.h"
 alias dwms="vim ~/.config/dwm/dwm.c"
 alias mkins="sudo make clean install"
+alias v="vim "
+alias ka='killall '
 
 # Starship Prompt
 eval "$(starship init bash)"
