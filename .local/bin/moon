@@ -1,3 +1,0 @@
-#!/bin/sh
-MOON="$(curl -s wttr.in/Kawasoti?format="+%m+%M")"
-echo "$MOON"
