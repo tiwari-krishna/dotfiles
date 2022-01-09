@@ -1,8 +1,14 @@
+#!/bin/sh
 nitrogen --restore &
 picom &
+#dunst &
+#sxhkd -c ~/.config/sxhkd/sxhkdrc-other &
 xclip &
-dunst &
 mpd &
-unclutter &
+#unclutter &
+#exec dbus-launch xmonad
+#exec dbus-launch bspwm
+#exec dbus-launch qtile start
+#exec dbus-launch awesome
 dwmblocks &
-exec dwm
+exec dbus-launch dwm
