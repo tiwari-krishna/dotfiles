@@ -28,19 +28,23 @@ super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
-#super + g
-#	bspc node -s biggest
+super + g
+	bspc node -s biggest
 
 
 # STATE/FLAGS
 
 # set the window state
-super + {t,shift + t,s,shift + f}
+super + {t,shift + t,f,shift + f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
-super + ctrl + {m,x,s,z}
-	bspc node -g {marked,locked,sticky,private}
+super + ctrl + {m,x,z}
+	bspc node -g {marked,locked,private}
+
+# sticky
+super + s
+        bspc node -g sticky
 
 
 # FOCUS/SWAP
@@ -80,22 +84,20 @@ super + Return
 	st
 super + e
     st -e ranger
+super + shift + m
+    st -r ncmpcpp
 super + shift + n
     st -e nvim
-super + shift + m
-    st -e ncmpcpp
 super + ctrl + e
     pcmanfm
 super + w
-    brave-browser
+    brave
 super + shift + w
     firefox
 super + space
-    dmenu_run
+    dmenu_run -p Run:
 super + ctrl + v
     pavucontrol
-super + d
-    deadbeef
 super + shift + e
     st -e htop
 super + shift + x
@@ -104,7 +106,14 @@ super + n
     nitrogen
 super + shift + s
     scrot -s
-
+super + shift + u
+        emojis
+super + y
+        minitube
+super + m
+        mailspring
+super + i
+        transmission-gtk
 
 #Multimedia and brightness
 XF86AudioRaiseVolume
@@ -120,7 +129,7 @@ XF86MonBrightnessDown
 Print
     scrot -s '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv ~/Screenshots'
 XF86HomePage
-    qutebrowser
+    chromium
 XF86AudioPrev
     mpc prev
 XF86AudioNext

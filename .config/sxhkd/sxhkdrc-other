@@ -1,0 +1,73 @@
+# APPLICATION KEYBINDINGS
+super + Return
+	st
+super + e
+    st -e ranger
+super + shift + n
+    st -e vim
+#super + shift + m
+#    st -e ncmpcpp
+super + ctrl + e
+    pcmanfm
+super + w
+    brave
+super + shift + w
+    firefox
+super + space
+    dmenu_run -p Run:
+super + ctrl + v
+    pavucontrol
+super + shift + e
+    st -e htop
+super + shift + x
+    power
+super + n
+    nitrogen
+super + shift + s
+    scrot -s
+super + shift + u
+        emojis
+super + y
+        minitube
+super + m
+        mailspring
+super + i
+        transmission-gtk
+
+#Multimedia and brightness
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86MonBrightnessUp
+    xbacklight -inc 10%
+XF86MonBrightnessDown
+    xbacklight -dec 10%
+Print
+    scrot -s '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv ~/Screenshots'
+XF86HomePage
+    chromium
+XF86AudioPrev
+    mpc prev
+XF86AudioNext
+    mpc next
+XF86AudioPlay
+    mpc toggle
+alt + Up
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+alt + Down
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+alt + shift + Left
+    mpc prev
+alt + shift + Right
+    mpc next
+alt + control + space
+    mpc single
+alt + shift + space
+    mpc toggle
+alt + Left
+    mpc seek -10
+alt + Right
+    mpc seek +10
