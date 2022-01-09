@@ -56,36 +56,23 @@ myBorderWidth   = 2
 
 myModMask       = mod4Mask
 
-myWorkspaces   = ["TERM ","NET ","MUS ","VID ","GAM ","DOC ","TXT ","DEV ","NEW"]
+myWorkspaces   = ["1 ","2","3","4","5","6","7","8","9"]
 --myWorkspaces = ["\61612","\61899","\61947","\61635","\61502","\61501","\61705","\61564","\62150"]
 myWorkspaceIndices = M.fromList $ zipWith (,) myWorkspaces [1..] 
 
-clickable ws = "<action=xdotool key super+"++show i++">"++ws++"</action>"
-    where i = fromJust $ M.lookup ws myWorkspaceIndices
-
-
-myNormalBorderColor  = "#4c566a"
-myFocusedBorderColor = "#3e3985"
+myNormalBorderColor  = "#ff0000"
+myFocusedBorderColor = "#5500ff"
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
-    [ ((modm,                xK_Return), spawn $ XMonad.terminal conf)
-    , ((modm .|. shiftMask, xK_Return), spawn "pcmanfm")
-    , ((modm,               xK_w     ), spawn "firefox")
-    , ((modm,               xK_d     ), spawn "deadbeef")
-    , ((modm,               xK_v     ), spawn "pavucontrol")
-    , ((modm .|. shiftMask, xK_h     ), spawn "lxtask")
-    , ((modm .|. shiftMask, xK_d     ), spawn "dmenu_run")
-    , ((mod1Mask,          xK_Return     ), spawn "gmrun")
-    , ((modm .|. shiftMask, xK_x     ), kill)
-    , ((modm,               xK_x     ), spawn "bash ~/dmscripts/power")
-    , ((modm,               xK_space ), sendMessage NextLayout)
+    [ ((modm,               xK_Return), spawn $ XMonad.terminal conf)
+    , ((modm,               xK_q     ), kill)
+    , ((modm,               xK_Tab   ), sendMessage NextLayout)
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
     , ((modm,               xK_n     ), refresh)
-    , ((modm,               xK_Tab   ), windows W.focusDown)
+    , ((modm .|. shiftMask, xK_Tab   ), windows W.focusDown)
     , ((modm,               xK_j     ), windows W.focusDown)
     , ((modm,               xK_k     ), windows W.focusUp  )
-    , ((modm,               xK_g     ), spawn "spotify")
     , ((modm .|. controlMask, xK_Return), windows W.swapMaster)
     , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  )
     , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
@@ -94,17 +81,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_t     ), withFocused $ windows . W.sink)
     , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
-    , ((modm              , xK_b     ), spawn "brave")
-    , ((modm .|. shiftMask, xK_n     ), spawn "emacs")
-    , ((0, xF86XK_AudioLowerVolume   ), spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%")
-    , ((0, xF86XK_AudioRaiseVolume   ), spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%")
-    , ((0, xF86XK_AudioMute          ), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
-    , ((modm .|. shiftMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
-    , ((0, xF86XK_MonBrightnessUp    ), spawn "xbacklight -inc 5%")
-    , ((0, xF86XK_MonBrightnessDown  ), spawn "xbacklight -dec 5%")
+    , ((modm .|. controlMask, xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     , ((modm,               xK_m     ), sendMessage (MT.Toggle NBFULL) >> sendMessage ToggleStruts)
-    , ((0,                  xK_Print ), spawn "scrot -s -q 100 -e 'mv $f ~/Screenshots/'")
     ]
     ++
 
@@ -127,7 +106,6 @@ myLayoutHook = spacingRaw True (Border 0 3 3 3) True (Border 3 3 3 3) True $ gap
                $ avoidStruts
                $ T.toggleLayouts simpleFloat
                $ mkToggle (NBFULL ?? NOBORDERS ?? EOT)
-               $ smartBorders
                $ tiled ||| Grid ||| spiral (6/7) ||| simpleFloat ||| noBorders Full 
   where
      tiled   = Tall nmaster delta ratio
@@ -158,28 +136,15 @@ myEventHook = mempty
 
 myLogHook = return ()
 
-myStartupHook = do
-      spawnOnce ("nitrogen --restore &")
-      spawnOnce ("lxpolkit &")
+myStartupHook = return()
 
 main :: IO()
 main = do
-     xmproc <- spawnPipe "xmobar -x 0 /home/krishna/.config/xmobar/config"
+     xmproc <- spawnPipe "polybar -c $HOME/.config/polybar/config.xmonad example"
      xmonad $ ewmh $ docks defaults
        { manageHook = manageDocks <+> manageHook defaultConfig
        , layoutHook = avoidStruts  $ myLayoutHook
-       , logHook = dynamicLogWithPP $
-           xmobarPP {
-                  ppOutput = hPutStrLn xmproc
-                , ppCurrent = xmobarColor "#fcba03" "" . wrap "[" "]"
-               , ppVisible = xmobarColor "#98be65" "" . clickable
-               , ppHidden = xmobarColor "#82AAFF" "" . clickable
-               , ppHiddenNoWindows = xmobarColor "#ffffff" "" . clickable
-               , ppTitle = xmobarColor "#ba74e8" "" . shorten 60
-               , ppSep =  "<fc=#666666> <fn=1>|</fn> </fc>"
-               , ppUrgent = xmobarColor "#C45500" "" . wrap "!" "!"
-               , ppOrder  = \(ws:l:t:ex) -> [ws,l]++ex++[t]  
-                    }
+      -- , logHook = dynamicLogWithPP $
        , handleEventHook = docksEventHook <+>fullscreenEventHook <+> minimizeEventHook
        }
 
