@@ -1,0 +1,22 @@
+#!/bin/sh
+
+cmd=$(printf "Poweroff\nReboot\nSuspend\nLock\nKillX\n" | dmenu -p "Execute:" $*)
+
+if [ -z "$cmd" ]; then
+	exit 0
+fi
+
+case "$cmd" in
+	Poweroff)
+		sudo poweroff ;;
+	Reboot)
+		sudo reboot ;;
+	Suspend)
+		sudo suspend ;;
+	Lock)
+		slock ;;
+	KillX)
+		killall X ;;
+	*)
+		printf "Option not recognized: %s\n" "$cmd" >&2
+esac
