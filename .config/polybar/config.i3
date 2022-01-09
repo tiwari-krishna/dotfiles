@@ -33,7 +33,7 @@ width = 100%
 height = 18
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 0.0
+radius = 1.0
 fixed-center = false
 
 background = ${colors.background}
@@ -51,22 +51,22 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Ubuntu Mono:size=10;0
-font-1 = FontAwesome:size=10:style=Regular;0
+font-0 = Roboto:size=10;0
+font-1 = Font Awesome:size=10:style=Regular;0
 
-modules-left = bspwm xwindow
-modules-center = 
-modules-right = mpd pulseaudio memory cpu wlan battery temperature date 
+modules-left = i3 xwindow
+modules-center =
+modules-right = mpd pulseaudio cpu wlan battery temperature date  
 
 tray-position = right
 tray-padding = 4
 separator =  
 ;tray-background = #0063ff
 
-wm-restack = bspwm
+;wm-restack = bspwm
 ;wm-restack = i3
 
-override-redirect = true
+;override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -79,7 +79,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %{F#d99}%title:0:30:...%%{F-}
+label = %{F#d99}%title:0:60:...%%{F-}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -106,68 +106,6 @@ mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-format = <label-state> <label-mode>
-
-label-focused = %index% 
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-;label-empty = %index%
-;label-empty-foreground = ${colors.foreground-alt}
-;label-empty-padding = 2
-
-; The following labels will be used to indicate the layout/mode
-; for the focused workspace. Requires <label-mode>
-;
-; Available tokens:
-;   None
-;label-monocle = 
-;label-tiled = 
-;label-fullscreen = 
-;label-floating = 
-;label-pseudotiled = P
-;label-locked = 
-;label-locked-foreground = #bd2c40
-;label-sticky = 
-;label-sticky-foreground = #fba922
-;label-private = 
-;label-private-foreground = #bd2c40
-;label-marked = M
-label-empty = %icon%
-label-empty-foreground = ${colors.foreground}
-label-empty-padding = 2
-label-empty-background = ${colors.background}
-label-monocle = " MON "
-label-monocle-foreground = ${colors.foreground}
-label-tiled = "  "
-label-tiled-foreground = ${colors.foreground}
-label-fullscreen = "  "
-label-fullscreen-foreground = ${colors.foreground}
-label-floating = "  "
-label-floating-foreground = ${colors.foreground}
-label-pseudotiled = "  "
-label-pseudotiled-foreground = ${colors.foreground}
-label-locked = "  "
-label-locked-foreground = ${colors.foreground}
-label-sticky = "  "
-label-sticky-foreground = ${colors.foreground}
-label-private =  "  "
-label-private-foreground = ${colors.foreground}
-
-; Separator in between workspaces
-; label-separator = |
 
 [module/i3]
 type = internal/i3
@@ -317,7 +255,7 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> 
-label-volume = %{F#3d8}   %percentage%% %{F-}
+label-volume = %{F#3d8}  %percentage%% %{F-}
 label-volume-foreground = ${root.foreground}
 
 label-muted = 􏚩   muted

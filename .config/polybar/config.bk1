@@ -1,5 +1,17 @@
 ;==========================================================
 ;
+; THIS IS AN EXAMPLE CONFIGURATION FILE!
+; IT IS NOT SUPPOSED TO WORK OUT OF THE BOX SINCE IS CONTAINS
+; SETTINGS THAT ARE SPECIFIC TO THE MACHINE WHICH WAS USED
+; TO GENERATE IT.
+; Please refer to the web documentation hosted at:
+; https://github.com/polybar/polybar#configuration
+; and
+; https://github.com/polybar/polybar/wiki/Configuration
+; if you want to automatically generate one for you.
+;
+;==========================================================
+;
 ;
 ;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
 ;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
@@ -30,43 +42,43 @@ alert = #bd2c40
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 18
+height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 0.0
+radius = 6.0
 fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 1
+line-size = 3
 line-color = #f00
 
-border-size = 0
+border-size = 4
 border-color = #00000000
 
 padding-left = 0
-padding-right = 0
+padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Ubuntu Mono:size=10;0
-font-1 = FontAwesome:size=10:style=Regular;0
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm xwindow
-modules-center = 
-modules-right = mpd pulseaudio memory cpu wlan battery temperature date 
+modules-left = bspwm i3
+modules-center = mpd
+modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
-tray-padding = 4
-separator =  
+tray-padding = 2
 ;tray-background = #0063ff
 
-wm-restack = bspwm
+;wm-restack = bspwm
 ;wm-restack = i3
 
-override-redirect = true
+;override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -79,7 +91,7 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %{F#d99}%title:0:30:...%%{F-}
+label = %title:0:30:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -110,9 +122,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
-format = <label-state> <label-mode>
-
-label-focused = %index% 
+label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
@@ -124,47 +134,9 @@ label-urgent = %index%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-;label-empty = %index%
-;label-empty-foreground = ${colors.foreground-alt}
-;label-empty-padding = 2
-
-; The following labels will be used to indicate the layout/mode
-; for the focused workspace. Requires <label-mode>
-;
-; Available tokens:
-;   None
-;label-monocle = 
-;label-tiled = 
-;label-fullscreen = 
-;label-floating = 
-;label-pseudotiled = P
-;label-locked = 
-;label-locked-foreground = #bd2c40
-;label-sticky = 
-;label-sticky-foreground = #fba922
-;label-private = 
-;label-private-foreground = #bd2c40
-;label-marked = M
-label-empty = %icon%
-label-empty-foreground = ${colors.foreground}
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
-label-empty-background = ${colors.background}
-label-monocle = " MON "
-label-monocle-foreground = ${colors.foreground}
-label-tiled = "  "
-label-tiled-foreground = ${colors.foreground}
-label-fullscreen = "  "
-label-fullscreen-foreground = ${colors.foreground}
-label-floating = "  "
-label-floating-foreground = ${colors.foreground}
-label-pseudotiled = "  "
-label-pseudotiled-foreground = ${colors.foreground}
-label-locked = "  "
-label-locked-foreground = ${colors.foreground}
-label-sticky = "  "
-label-sticky-foreground = ${colors.foreground}
-label-private =  "  "
-label-private-foreground = ${colors.foreground}
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -209,15 +181,14 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online =   <icon-prev>    <icon-stop>   <toggle>    <icon-next>
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
 
-label-song =%title%
 label-song-maxlen = 25
 label-song-ellipsis = true
 
@@ -246,27 +217,27 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
-#format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
-label = %{F#8e7}  %percentage:2%%%{F-}
+label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = ""
-#format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %{F#e69}  %mb_used%/%gb_total%%{F-}
+label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlp59s0
 interval = 3.0
 
-format-connected = %{F#eae}   <label-connected> %{F-}
+format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected =  %downspeed:9%    %upspeed% 
+label-connected = %essid%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -283,7 +254,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = eth1
+interface = enp0s31f6
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -302,10 +273,10 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = %{F#d9e}    %Y-%m-%d%{F-}
+date-alt = " %Y-%m-%d"
 
-time = %{F#d9e}   %H:%M%{F-}
-time-alt = %{F#d9e}  %H:%M%{F-}
+time = %H:%M
+time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
@@ -316,14 +287,13 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> 
-label-volume = %{F#3d8}   %percentage%% %{F-}
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 􏚩   muted
+label-muted = 🔇 muted
 label-muted-foreground = #666
 
-format-underline = #4bffdc
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
@@ -372,16 +342,16 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = ADP1
+adapter = AC
 full-at = 98
 
-format-charging = %{F#690} <label-charging>%{F-}
+format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
-format-discharging = %{F#690} <label-discharging>%{F-}
+format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -407,13 +377,13 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format =  <ramp> <label>
+format = <ramp> <label>
 format-underline = #f50a4d
-format-warn =  <ramp> <label-warn>
+format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label =  %temperature-c%
-label-warn =  %temperature-c%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 

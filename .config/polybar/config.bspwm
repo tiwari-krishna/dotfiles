@@ -51,10 +51,10 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Ubuntu Mono:size=10;0
-font-1 = FontAwesome:size=10:style=Regular;0
+font-0 = Roboto:size=10;0
+font-1 = Font Awesome:size=10:style=Regular;0
 
-modules-left = bspwm xwindow
+modules-left = i3 bspwm xwindow
 modules-center = 
 modules-right = mpd pulseaudio memory cpu wlan battery temperature date 
 
@@ -63,10 +63,10 @@ tray-padding = 4
 separator =  
 ;tray-background = #0063ff
 
-wm-restack = bspwm
+;wm-restack = bspwm
 ;wm-restack = i3
 
-override-redirect = true
+;override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -261,7 +261,7 @@ label = %{F#e69}  %mb_used%/%gb_total%%{F-}
 
 [module/wlan]
 type = internal/network
-interface = wlan0
+interface = wlp1s0
 interval = 3.0
 
 format-connected = %{F#eae}   <label-connected> %{F-}
