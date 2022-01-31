@@ -1,0 +1,5 @@
+#!/bin/sh
+
+NAME=$(mpc | sed -n 1p)
+
+printf "$NAME"

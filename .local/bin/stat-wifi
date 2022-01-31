@@ -5,7 +5,7 @@ STRENGTH="$(nmcli -t -f SIGNAL device wifi list)"
 #IP="$(curl -s https://ipinfo.io/ip)"
 
 if [ "$SSID" = "" ]; then
-        echo " 🔕 NC "
+        echo "🔕 NC"
 else
         echo "📶 ${STRENGTH}"
 fi

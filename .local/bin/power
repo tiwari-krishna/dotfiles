@@ -16,7 +16,7 @@ case "$cmd" in
 	Lock)
 		slock ;;
 	KillX)
-		killall X ;;
+		killall xinit ;;
 	*)
 		printf "Option not recognized: %s\n" "$cmd" >&2
 esac

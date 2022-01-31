@@ -1,5 +1,3 @@
 #!/bin/sh
-TEMP="$(curl -s wttr.in/Kawasoti?format="+%t(%f)")"
-WEATH="$(curl -s wttr.in/Kawasoti?format="+%c+%C")"
-WIND="$(curl -s wttr.in/Kawasoti?format="+%w")"
-echo "$WEATH 🌡️ $TEMP $WIND"
+WEATH="$(curl -s wttr.in/Kawasoti?format="+%c+%C+%w")"
+echo "$WEATH"

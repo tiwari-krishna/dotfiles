@@ -4,7 +4,7 @@ BATT="$(acpi | awk '{print $3 $4}')"
 TIME="$(acpi | awk '{print $5}')"
 
 if [ "$BATT" = "Full,100%" ]; then
-        echo " 🔋 Full "
+        echo "🔋Full "
 else
-        echo " ⚡ $BATT ⏳ $TIME "
+        echo "⚡$BATT ⏳$TIME"
 fi
