@@ -1,4 +1,5 @@
-export BROWSER=firefox
+export BROWSER=brave
+export AUR=paru
 export EDITOR=vim
 export TERMINAL=st
 export HISTCONTROL=ignoredups:erasedups

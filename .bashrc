@@ -29,18 +29,32 @@ ex ()
 
 
 #Aliases
-alias ls='exa -al --color=always --group-directories-first'
-alias la='exa -a --color=always --group-directories-first'
+alias ls='ls -alh --color=always --group-directories-first'
+alias la='ls -ah --color=always --group-directories-first'
+alias grep='grep --color=auto'
 alias ..='cd ..'
 alias you-m4a="youtube-dl --extract-audio --audio-format m4a "
 alias you-mp3="youtube-dl --extract-audio --audio-format mp3 "
 alias you-best="youtube-dl -f bestvideo+bestaudio "
+alias you-best-aud="youtube-dl --extract-audio --audio-format best "
 alias lynx="lynx -vikeys"
 alias dwmc="vim ~/.config/dwm/config.h"
 alias dwms="vim ~/.config/dwm/dwm.c"
 alias mkins="sudo make clean install"
 alias v="vim "
 alias ka='killall '
+alias aurup='paru'
+alias pacup='sudo pacman -Syu'
+alias pacupd='sudo pacman -Syy'
+alias pacupg='sudo pacman -Suu'
+alias pacins='paru -S '
+alias pacrm='paru -Rsuc'
+alias aptup='sudo apt update && sudo apt upgrade'
+alias aptupd='sudo apt update'
+alias aptupg='sudo apt upgrade'
+alias aptins='sudo apt install '
+alias aptrm='sudo apt remove '
+alias rm='rm -i'
 
 # Starship Prompt
 eval "$(starship init bash)"
