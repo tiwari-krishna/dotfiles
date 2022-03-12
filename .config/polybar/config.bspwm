@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #bb222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -63,10 +63,10 @@ tray-padding = 4
 separator =  
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
+wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -190,7 +190,7 @@ label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
-label-unfocused-padding = 2
+abel-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
 label-visible = %index%
@@ -261,7 +261,7 @@ label = %{F#e69}  %mb_used%/%gb_total%%{F-}
 
 [module/wlan]
 type = internal/network
-interface = wlp1s0
+interface = wlan0
 interval = 3.0
 
 format-connected = %{F#eae}   <label-connected> %{F-}
@@ -301,10 +301,10 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
-date-alt = %{F#d9e}    %Y-%m-%d%{F-}
+;date =
+date = %{F#d9e}    %Y-%m-%d%{F-}
 
-time = %{F#d9e}   %H:%M%{F-}
+;time = %{F#d9e}   %H:%M%{F-}
 time-alt = %{F#d9e}  %H:%M%{F-}
 
 format-prefix = 

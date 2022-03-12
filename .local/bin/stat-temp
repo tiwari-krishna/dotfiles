@@ -1,5 +1,0 @@
-#!/bin/sh
-
-TEMP="$(curl -s wttr.in/Kawasoti?format="+%t")"
-
-echo "🌡️$TEMP"

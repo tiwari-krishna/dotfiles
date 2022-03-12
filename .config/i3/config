@@ -1,44 +1,73 @@
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 3
+
+font pango:Droid Sans Mono 10
 
 for_window [class="^.*"] border pixel 2
-gaps inner 3
+gaps inner 10
 gaps outer 3
+#smart_gaps off
+smart_borders on
 
 set $mod Mod4
 set $mod1 Mod1
+set $Browser2 brave
 set $Browser1 firefox
-set $Browser2 qutebrowser
-set $terminal st
+set $terminal alacritty
+floating_modifier $mod
 
-font pango:Roboto 10
+exec --no-startup-id polybar -c $HOME/.config/polybar/config.i3 example
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+bindsym $mod+plus  gaps inner all plus 5
+bindsym $mod+minus gaps inner all minus 5
+bindsym $mod+Shift+plus gaps inner all set 0
 
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86HomePage exec --no-startup-id $Browser2
 bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86AudioNext exec --no-startup-id mpc next
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5%
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5%
-bindsym print exec scrot -s -q 100 -e 'mv $f ~/Screenshots/'
+bindsym print exec maim ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
+bindsym Shift+print exec maim -s ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
 
-bindsym $mod1+Up exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3% && $refresh_i3status
-bindsym $mod1+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3% && $refresh_i3status
+bindsym $mod1+s exec maim ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
+bindsym $mod1+apostrophe exec mpc seek 0%
+bindsym $mod1+Shift+s exec maim -s ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
+bindsym $mod1+Up exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
+bindsym $mod1+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3%
 bindsym $mod1+Shift+Left exec --no-startup-id mpc prev
 bindsym $mod1+Shift+Right exec --no-startup-id mpc next
 bindsym $mod1+Shift+space exec --no-startup-id mpc toggle
 bindsym $mod+Shift+s exec scrot -s -q 100 -e 'mv $f ~/Screenshots/'
-bindsym $mod+bracketleft exec --no-startup-id mpc seek -10
-bindsym $mod+Shift+bracketleft exec --no-startup-id mpc seek -60
-bindsym $mod+bracketright exec --no-startup-id mpc seek +10
-bindsym $mod+Shift+bracketright exec --no-startup-id mpc seek -60
+bindsym $mod1+bracketleft exec --no-startup-id mpc seek -10
+bindsym $mod1+Shift+bracketleft exec --no-startup-id mpc seek -60
+bindsym $mod1+bracketright exec --no-startup-id mpc seek +10
+bindsym $mod1+Shift+bracketright exec --no-startup-id mpc seek -60
+bindsym $mod1+Control+Return exec --no-startup-id mpc single
+bindsym $mod1+Shift+Return exec --no-startup-id $terminal -e ncmpcpp
 
-floating_modifier $mod
+bindsym $mod+Shift+n exec --no-startup-id $terminal -e nvim
+bindsym $mod+e exec --no-startup-id $terminal -e lf
+bindsym $mod+v exec --no-startup-id transmission-gtk
+bindsym $mod+Shift+v exec --no-startup-id minitube
+bindsym $mod+Control+x exec --no-startup-id slock
+bindsym $mod+n exec --no-startup-id $terminal -e newsboat
+bindsym $mod+Shift+e exec --no-startup-id $terminal -e gotop
+bindsym $mod+w exec --no-startup-id $Browser1
+bindsym $mod+Shift+w exec --no-startup-id set-wallpaper
+bindsym $mod+Control+v exec --no-startup-id pavucontrol
+bindsym $mod+m exec --no-startup-id $terminal -e neomutt
+bindsym $mod+Shift+x exec power
+bindsym $mod+Shift+g exec gimp
+bindsym $mod+Shift+u exec rofi -show emoji
+bindsym $mod1+r exec radio-listen
+bindsym Shift+Menu exec maim -s ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
+bindsym Control+Menu exec maim ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
+bindsym $mod1+Menu exec radio-listen
 
 bindsym $mod+Return exec $terminal
 
@@ -67,7 +96,6 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 bindsym $mod+o split h
-
 bindsym $mod+p split v
 
 bindsym $mod+Shift+f fullscreen toggle
@@ -76,10 +104,10 @@ bindsym $mod+y layout stacking
 bindsym $mod+u layout tabbed
 bindsym $mod+t layout toggle split
 
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+f floating toggle
 
 bindsym $mod+Tab focus mode_toggle
-
+bindsym $mod+s sticky toggle
 bindsym $mod+a focus parent
 
 set $ws1 "1"
@@ -134,85 +162,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+Shift+n exec --no-startup-id $terminal -e nvim
-bindsym $mod+e exec --no-startup-id $terminal -e ranger
-bindsym $mod+i exec --no-startup-id $terminal -e transmission-gtk
-bindsym $mod+backslash exec --no-startup-id $terminal -e newsboat
-bindsym $mod+Shift+e exec --no-startup-id $terminal -e htop
-bindsym $mod+Shift+m exec --no-startup-id $terminal -e ncmpcpp
-bindsym $mod+w exec --no-startup-id brave
-bindsym $mod+Shift+w exec --no-startup-id chromium
-bindsym $mod+n exec --no-startup-id nitrogen
-bindsym $mod+Control+v exec --no-startup-id pavucontrol
-bindsym $mod+Control+e exec --no-startup-id pcmanfm
-bindsym $mod+m exec --no-startup-id mailspring
-bindsym $mod+Shift+x exec power
-bindsym $mod+Shift+u exec emojis
-
-bar {
-      height 18
-      workspace_buttons yes
-      #font pango:Liberation Sans 10
-      position top
-      strip_workspace_numbers no
-
-        status_command polybar example
- colors {
-        background #0a0a21
-        statusline #f2f2e9
-        separator  #00c8ff
-
-        # colorclass           border  backgr. text
-        focused_workspace     #a9a9a9 #5f676a #eeeeee
-        active_workspace      #a9a9a9 #5f676a #eeeeee
-        inactive_workspace    #a9a9a9 #222222 #a9a9a9
-        urgent_workspace      #a9a9a9 #d42121 #FFFFFF
-        }
-
-}
-
-for_window [class="Bleachbit"] floating disable
-for_window [class="Blueberry.py"] floating enable
-for_window [class="Brasero"] floating disable
-for_window [class="Galculator"] floating enable
-for_window [class="Gnome-disks"] floating disable
-for_window [class="^Gnome-font-viewer$"] floating enable
-for_window [class="^Gpick$"] floating enable
-for_window [class="Hexchat"] floating disable
-for_window [class="Imagewriter"] floating enable
-#for_window [class="Font-manager"] floating enable
-#for_window [class="qt5ct|Lxappearance] floating enable
-#for_window [class="Nitrogen"] floating disable
-#for_window [class="Pavucontrol"] floating disable
-#for_window [class="Peek"] floating enable
-for_window [class="^Skype$"] floating enable
-for_window [class="^Spotify$"] floating disable
-for_window [class="System-config-printer.py"] floating enable
-for_window [class="Unetbootin.elf"] floating enable
-for_window [class="Usb-creator-gtk"] floating enable
-for_window [class="^Vlc$"] floating disable
-for_window [class="Wine"] floating disable
-for_window [class="Xfburn"] floating disable
-for_window [class="Xfce4-appfinder"] floating enable
-for_window [class="Xfce4-settings-manager"] floating disable
-for_window [class="Xfce4-taskmanager"] floating enable
-
-
-for_window [instance="gimp"] floating disable
-for_window [instance="script-fu"] border normal
-for_window [instance="variety"] floating disable
-
-
-for_window [title="Copying"] floating enable
-for_window [title="Deleting"] floating enable
-for_window [title="Moving"] floating enable
-for_window [title="^Terminator Preferences$"] floating enable
-
-
-for_window [window_role="^gimp-toolbox-color-dialog$"] floating enable
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="^Preferences$"] floating enable
-for_window [window_role="setup"] floating enable
 
 popup_during_fullscreen smart
 

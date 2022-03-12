@@ -1,11 +1,10 @@
 #!/bin/sh
+connec="$(cat /sys/class/net/w*/operstate)"
 
-SSID="$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -c 5-)"
-STRENGTH="$(nmcli -t -f SIGNAL device wifi list)"
-#IP="$(curl -s https://ipinfo.io/ip)"
-
-if [ "$SSID" = "" ]; then
-        echo "🔕 NC"
+if [ "$connec" = "up" ]; then
+        stat="$(awk '/^\s*w/ { print "📶", int($3 * 100 / 70) "% " }' /proc/net/wireless)"
 else
-        echo "📶 ${STRENGTH}"
+        stat="📵 NC"
 fi
+
+echo "$stat"

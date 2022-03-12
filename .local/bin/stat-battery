@@ -1,10 +1,15 @@
 #!/bin/sh
 
-BATT="$(acpi | awk '{print $3 $4}')"
-TIME="$(acpi | awk '{print $5}')"
+Capacity="$(cat /sys/class/power_supply/BAT*/capacity)"
+stat="$(cat /sys/class/power_supply/BAT*/status)"
 
-if [ "$BATT" = "Full,100%" ]; then
-        echo "🔋Full "
-else
-        echo "⚡$BATT ⏳$TIME"
-fi
+case "$stat" in
+		"Full") icon="🔋" ;;
+		"Discharging") icon="🔃" ;;
+		"Charging") icon="🔌" ;;
+		"Not charging") icon="🛑" ;;
+		"Unknown") icon="🔗" ;;
+		*) exit 1 ;;
+	esac
+
+echo "$icon$Capacity"

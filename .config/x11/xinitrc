@@ -1,14 +1,11 @@
 #!/bin/sh
-nitrogen --restore &
+xwallpaper --stretch $HOME/.cache/wall &
 picom &
-#dunst &
-#sxhkd -c ~/.config/sxhkd/sxhkdrc-other &
+dunst &
+xmodmap -e 'keycode 105 = Escape' &
+#xrdb $XRESOURCES &
 xclip &
 mpd &
-#unclutter &
-#exec dbus-launch xmonad
-#exec dbus-launch bspwm
-#exec dbus-launch qtile start
-#exec dbus-launch awesome
+emacs --daemon &
 dwmblocks &
 exec dbus-launch dwm

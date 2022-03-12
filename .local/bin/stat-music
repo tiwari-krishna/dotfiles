@@ -1,5 +1,13 @@
 #!/bin/sh
 
-NAME=$(mpc | sed -n 1p)
+stat="$(mpc | awk 'FNR == 2 {print $1}')"
 
-printf "$NAME"
+if [ "$stat" = "[paused]" ]; then
+        out="⏸️"
+elif [ "$stat" = "[playing]" ]; then
+        out="▶$(mpc current | cut -c-20)"
+else
+        out="⏹"
+fi
+
+echo $out

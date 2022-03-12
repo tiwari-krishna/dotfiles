@@ -1,22 +1,25 @@
 #!/bin/sh
 
-cmd=$(printf "Poweroff\nReboot\nSuspend\nLock\nKillX\n" | dmenu -p "Execute:" $*)
-
-if [ -z "$cmd" ]; then
-	exit 0
-fi
+cmd=$(printf "Poweroff\nReboot\nLock\nKillX\n" | dmenu -p "Select a Power Option:" $*)
 
 case "$cmd" in
-	Poweroff)
-		sudo poweroff ;;
-	Reboot)
-		sudo reboot ;;
-	Suspend)
-		sudo suspend ;;
+        Poweroff) sel=$(printf "Yes\\nNo" | dmenu -p "Are You Sure?:");
+                if [ "$sel" = "Yes" ]; then
+                        sudo poweroff & exit 1
+                else
+                        exit 0
+                fi ;;
+	Reboot) sel=$(printf "Yes\\nNo" | dmenu -p "Are You Sure?:");
+                if [ "$sel" = "Yes" ]; then
+                        sudo reboot & exit 1
+                else
+                        exit 0
+                fi ;;
 	Lock)
-		slock ;;
+		slock && exit 0 ;;
 	KillX)
-		killall xinit ;;
+		killall xinit && exit 0 ;;
 	*)
-		printf "Option not recognized: %s\n" "$cmd" >&2
+		notify-send "Sorry 🙇🙇" "Option not recognized"
+        exit 1;;
 esac

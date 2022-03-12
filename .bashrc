@@ -29,8 +29,9 @@ ex ()
 
 
 #Aliases
-alias ls='ls -alh --color=always --group-directories-first'
-alias la='ls -ah --color=always --group-directories-first'
+alias la='ls -lah --color=always --group-directories-first'
+alias ls='ls --color=always'
+alias srbs='source .bashrc '
 alias grep='grep --color=auto'
 alias ..='cd ..'
 alias you-m4a="youtube-dl --extract-audio --audio-format m4a "
@@ -38,10 +39,9 @@ alias you-mp3="youtube-dl --extract-audio --audio-format mp3 "
 alias you-best="youtube-dl -f bestvideo+bestaudio "
 alias you-best-aud="youtube-dl --extract-audio --audio-format best "
 alias lynx="lynx -vikeys"
-alias dwmc="vim ~/.config/dwm/config.h"
-alias dwms="vim ~/.config/dwm/dwm.c"
 alias mkins="sudo make clean install"
-alias v="vim "
+alias v="nvim "
+alias vim='nvim '
 alias ka='killall '
 alias aurup='paru'
 alias pacup='sudo pacman -Syu'
@@ -55,6 +55,13 @@ alias aptupg='sudo apt upgrade'
 alias aptins='sudo apt install '
 alias aptrm='sudo apt remove '
 alias rm='rm -i'
+alias mkexec='chmod +x '
+alias uchown='sudo chown --recursive $USER '
+alias cdwm='cd $HOME/.config/dwm && lf'
+alias findr='sudo find / -iname '
+alias findh='find $HOME/ -iname '
+alias svim='sudo nvim '
+alias clr='clear'
 
 # Starship Prompt
 eval "$(starship init bash)"

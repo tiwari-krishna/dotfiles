@@ -30,7 +30,7 @@ alert = #bd2c40
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 18
+height = 20
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 1.0
@@ -51,8 +51,8 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Roboto:size=10;0
-font-1 = Font Awesome:size=10:style=Regular;0
+font-0 = Droid Sans:pixelsize=11:style=bold;0
+font-1 = Font Awesome:size=10:style=Regular;1
 
 modules-left = i3 xwindow
 modules-center =
@@ -237,13 +237,13 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 60
 
-date =
-date-alt = %{F#d9e}    %Y-%m-%d%{F-}
+;date =
+date = %{F#d9e}    %Y-%m-%d%{F-}
 
 time = %{F#d9e}   %H:%M%{F-}
-time-alt = %{F#d9e}  %H:%M%{F-}
+;time-alt = %{F#d9e}  %H:%M%{F-}
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
