@@ -1,0 +1,15 @@
+#!/bin/sh
+
+light="$(xbacklight | awk '{ print int($1) }')"
+
+if [ "$light" -gt "70" ]; then
+    icon="😵"
+elif [ "$light" -gt "30" ]; then
+    icon="🔆"
+elif [ "$light" -gt "0" ]; then
+    icon="🔅"
+else
+        icon="☀ " && exit
+fi
+
+echo "$icon$light"
