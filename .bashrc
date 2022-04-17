@@ -1,7 +1,7 @@
 #Vi mode
 set -o vi
 
-#Archiver thanks arcolinux
+#Archiver
 ex ()
 {
   if [ -f "$1" ] ; then
@@ -29,9 +29,7 @@ ex ()
 
 
 #Aliases
-alias la='ls -lah --color=always --group-directories-first'
-alias ls='ls --color=always'
-alias srbs='source .bashrc '
+alias ls='ls --color=always --group-directories-first'
 alias grep='grep --color=auto'
 alias ..='cd ..'
 alias you-m4a="youtube-dl --extract-audio --audio-format m4a "
@@ -39,9 +37,11 @@ alias you-mp3="youtube-dl --extract-audio --audio-format mp3 "
 alias you-best="youtube-dl -f bestvideo+bestaudio "
 alias you-best-aud="youtube-dl --extract-audio --audio-format best "
 alias lynx="lynx -vikeys"
+alias dwmc="vim ~/.config/dwm/config.h"
+alias dwms="vim ~/.config/dwm/dwm.c"
 alias mkins="sudo make clean install"
 alias v="nvim "
-alias vim='nvim '
+alias vim="nvim "
 alias ka='killall '
 alias aurup='paru'
 alias pacup='sudo pacman -Syu'
@@ -55,13 +55,9 @@ alias aptupg='sudo apt upgrade'
 alias aptins='sudo apt install '
 alias aptrm='sudo apt remove '
 alias rm='rm -i'
-alias mkexec='chmod +x '
-alias uchown='sudo chown --recursive $USER '
-alias cdwm='cd $HOME/.config/dwm && lf'
-alias findr='sudo find / -iname '
-alias findh='find $HOME/ -iname '
-alias svim='sudo nvim '
-alias clr='clear'
+alias install='sudo xbps-install'
+alias remove='sudo xbps-remove'
+alias update='sudo xbps-install -Su'
 
 # Starship Prompt
 eval "$(starship init bash)"

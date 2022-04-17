@@ -1,58 +1,53 @@
 default_border pixel 2
-default_floating_border pixel 3
-
-font pango:Droid Sans Mono 10
+default_floating_border pixel 4
 
 for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 3
+gaps inner 3
+gaps outer 5
 #smart_gaps off
 smart_borders on
 
 set $mod Mod4
 set $mod1 Mod1
 set $Browser2 brave
-set $Browser1 firefox
-set $terminal alacritty
+set $Browser1 qutebrowser
+set $terminal st
 floating_modifier $mod
-
-exec --no-startup-id polybar -c $HOME/.config/polybar/config.i3 example
 
 bindsym $mod+plus  gaps inner all plus 5
 bindsym $mod+minus gaps inner all minus 5
 bindsym $mod+Shift+plus gaps inner all set 0
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3% && pkill -SIGRTMIN+2 i3blocks
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3% && pkill -SIGRTMIN+2 i3blocks
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86HomePage exec --no-startup-id $Browser2
-bindsym XF86AudioPrev exec --no-startup-id mpc prev
-bindsym XF86AudioNext exec --no-startup-id mpc next
-bindsym XF86AudioPlay exec --no-startup-id mpc toggle
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5%
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5%
+bindsym XF86AudioPrev exec --no-startup-id mpc prev && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioNext exec --no-startup-id mpc next && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioPlay exec --no-startup-id mpc toggl && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5% && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5% && pkill -SIGRTMIN+3 i3blocks
 bindsym print exec maim ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
 bindsym Shift+print exec maim -s ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
 
 bindsym $mod1+s exec maim ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
 bindsym $mod1+apostrophe exec mpc seek 0%
 bindsym $mod1+Shift+s exec maim -s ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
-bindsym $mod1+Up exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
-bindsym $mod1+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3%
-bindsym $mod1+Shift+Left exec --no-startup-id mpc prev
-bindsym $mod1+Shift+Right exec --no-startup-id mpc next
-bindsym $mod1+Shift+space exec --no-startup-id mpc toggle
-bindsym $mod+Shift+s exec scrot -s -q 100 -e 'mv $f ~/Screenshots/'
+bindsym $mod1+Up exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3% && pkill -SIGRTMIN+2 i3blocks
+bindsym $mod1+Down exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3% && pkill -SIGRTMIN+2 i3blocks
+bindsym $mod1+Shift+Left exec --no-startup-id mpc prev && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod1+Shift+Right exec --no-startup-id mpc next && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod1+Shift+space exec --no-startup-id mpc toggle && pkill -SIGRTMIN+1 i3blocks
 bindsym $mod1+bracketleft exec --no-startup-id mpc seek -10
 bindsym $mod1+Shift+bracketleft exec --no-startup-id mpc seek -60
 bindsym $mod1+bracketright exec --no-startup-id mpc seek +10
 bindsym $mod1+Shift+bracketright exec --no-startup-id mpc seek -60
 bindsym $mod1+Control+Return exec --no-startup-id mpc single
-bindsym $mod1+Shift+Return exec --no-startup-id $terminal -e ncmpcpp
+bindsym $mod1+$mod+Return exec --no-startup-id $terminal -e ncmpcpp
 
 bindsym $mod+Shift+n exec --no-startup-id $terminal -e nvim
-bindsym $mod+e exec --no-startup-id $terminal -e lf
-bindsym $mod+v exec --no-startup-id transmission-gtk
+bindsym $mod+a exec --no-startup-id $terminal -e ranger
+bindsym $mod+v exec --no-startup-id qbittorrent
 bindsym $mod+Shift+v exec --no-startup-id minitube
 bindsym $mod+Control+x exec --no-startup-id slock
 bindsym $mod+n exec --no-startup-id $terminal -e newsboat
@@ -61,9 +56,9 @@ bindsym $mod+w exec --no-startup-id $Browser1
 bindsym $mod+Shift+w exec --no-startup-id set-wallpaper
 bindsym $mod+Control+v exec --no-startup-id pavucontrol
 bindsym $mod+m exec --no-startup-id $terminal -e neomutt
-bindsym $mod+Shift+x exec power
+bindsym $mod+Shift+BackSpace exec power
 bindsym $mod+Shift+g exec gimp
-bindsym $mod+Shift+u exec rofi -show emoji
+bindsym $mod+Menu exec rofi -show emoji
 bindsym $mod1+r exec radio-listen
 bindsym Shift+Menu exec maim -s ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
 bindsym Control+Menu exec maim ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
@@ -108,7 +103,7 @@ bindsym $mod+f floating toggle
 
 bindsym $mod+Tab focus mode_toggle
 bindsym $mod+s sticky toggle
-bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus parent
 
 set $ws1 "1"
 set $ws2 "2"
@@ -162,10 +157,25 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+bar {
+  status_command i3blocks
+  position top
+  font pango:Fira Code Medium 10
+  colors {
+        background #222222
+        statusline #bbbbbb
+        separator #222222
+
+        focused_workspace  #4c7899 #0d76a3 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        urgent_workspace   #2f343a #900000 #ffffff
+        binding_mode       #2f343a #900000 #ffffff
+  }
+}
 
 popup_during_fullscreen smart
 
-    client.focused          #6790EB #6790EB #e5e5e5 #6790EB
+    client.focused          #f5f7fc #f5f7fc #e5e5e5 #f5f7fc
     client.unfocused        #222222 #222222 #aaaaaa #222222
     client.focused_inactive #222222 #222222 #a9a9a9 #222222
     client.placeholder      #222222 #222222 #aaaaaa #222222

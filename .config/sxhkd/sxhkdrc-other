@@ -1,7 +1,7 @@
 # APPLICATION KEYBINDINGS
 super + Return
 	st
-super + e
+super + a
     st -e ranger
 super + shift + n
     st -e vim
@@ -10,45 +10,59 @@ super + shift + n
 super + ctrl + e
     pcmanfm
 super + w
-    brave
+    $BROWSER
 super + shift + w
-    firefox
+    set-wallpaper
 super + space
     dmenu_run -p Run:
 super + ctrl + v
     pavucontrol
 super + shift + e
-    st -e htop
-super + shift + x
+    st -e gotop
+super + BackSpace
     power
 super + n
-    nitrogen
-super + shift + s
-    scrot -s
-super + shift + u
-        emojis
+    newsboat
+alt + shift + s
+    maim -s ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
+alt + s
+    maim ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
+super + Menu
+        rofi -show emoji
 super + y
         minitube
 super + m
-        mailspring
+        neomutt
 super + i
-        transmission-gtk
+        qbittorrent
+alt + r
+        radio-listen
+super + e
+        emacsclient -c
+super + c
+        galculator
+super + control + x
+        slock
+super + grave
+        alacritty
 
 #Multimedia and brightness
 XF86AudioRaiseVolume
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
+    pamixer --allow-boost -i 3
 XF86AudioLowerVolume
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+    pamixer --allow-boost -d 3
 XF86AudioMute
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
+    pamixer -t
 XF86MonBrightnessUp
-    xbacklight -inc 10%
+    xbacklight -inc 5%
 XF86MonBrightnessDown
-    xbacklight -dec 10%
+    xbacklight -dec 5%
+shift + Print
+    maim -s ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
 Print
-    scrot -s '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv ~/Screenshots'
+    maim ~/Data/screenshots/$(date +%Y-%m-%d-%s).png
 XF86HomePage
-    chromium
+    $BROWSER
 XF86AudioPrev
     mpc prev
 XF86AudioNext
@@ -56,9 +70,9 @@ XF86AudioNext
 XF86AudioPlay
     mpc toggle
 alt + Up
-    pactl set-sink-volume @DEFAULT_SINK@ +5%
+    pamixer --allow-boost -i 3
 alt + Down
-    pactl set-sink-volume @DEFAULT_SINK@ -5%
+    pamixer --allow-boost -d 3
 alt + shift + Left
     mpc prev
 alt + shift + Right
@@ -67,7 +81,11 @@ alt + control + space
     mpc single
 alt + shift + space
     mpc toggle
+alt + shift + Left
+    mpc seek -60
 alt + Left
     mpc seek -10
 alt + Right
     mpc seek +10
+alt + shift + Right
+    mpc seek +60

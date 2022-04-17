@@ -1,11 +1,10 @@
 #!/bin/sh
 xwallpaper --stretch $HOME/.cache/wall &
-picom &
+xcompmgr &
 dunst &
-xmodmap -e 'keycode 105 = Escape' &
+emacs --daemon &
 #xrdb $XRESOURCES &
 xclip &
 mpd &
-emacs --daemon &
 dwmblocks &
-exec dbus-launch dwm
+exec dwm

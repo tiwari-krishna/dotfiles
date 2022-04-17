@@ -1,5 +1,4 @@
 #!/bin/sh
-
 stat="$(mpc | awk 'FNR == 2 {print $1}')"
 
 if [ "$stat" = "[paused]" ]; then
